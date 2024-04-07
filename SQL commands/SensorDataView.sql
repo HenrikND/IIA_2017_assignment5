@@ -1,0 +1,10 @@
+CREATE VIEW GetSensorInfo
+as select
+SENSOR.SensorId,
+ROOM.RoomNumber,
+SENSORTYPE.Type,
+SENSOR.AverageValueCelsius
+from SENSOR
+INNER JOIN SENSORTYPE ON SENSOR.SensorTypeId = SENSORTYPE.SensorTypeId
+INNER JOIN ROOM ON SENSOR.RoomId = ROOM.RoomId
+GO
